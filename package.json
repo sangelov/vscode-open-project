@@ -29,6 +29,11 @@
 						
 					},
 					"description": "Map of project identifier -> folder."
+				},
+				"vscode-open-project.codePath" : {
+					"type": "string",
+					"default": "",
+					"description": "Path to the 'code' command"
 				}
 			}
 		}

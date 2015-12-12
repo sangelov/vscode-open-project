@@ -1,7 +1,7 @@
 
-import * as assert from 'assert';
-import * as vscode from 'vscode';
-import * as openProject from '../src/extension';
+import * as assert from "assert";
+import * as vscode from "vscode";
+import * as openProject from "../src/openProject";
 
 suite("setup", () => {
 
@@ -12,7 +12,7 @@ suite("setup", () => {
 	
 	test("Command is added to the context", (done) => {
 		vscode.commands.getCommands().then(commands => {
-			assert.ok(commands.indexOf(openProject.OpenProjectCommandId) > -1, 'open project command is not registered');
+			assert.ok(commands.indexOf(openProject.OpenProjectCommandId) > -1, "open project command is not registered");
 		}).then(done, done);
 	});
 });
