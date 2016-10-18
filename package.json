@@ -4,8 +4,11 @@
 	"description": "Open a project using the VS Code command window",
 	"version": "0.0.1",
 	"publisher": "svetlozarangelov",
+	"repository": {
+		"url": "https://github.com/sangelov/vscode-open-project"
+	},
 	"engines": {
-		"vscode": "^0.10.1"
+		"vscode": "^1.5.0"
 	},
 	"categories": [
 		"Other"
@@ -15,22 +18,25 @@
 	],
 	"main": "./out/src/extension",
 	"contributes": {
-		"commands": [{
-			"command": "vscode-open-project.openProject",
-			"title": "Open Project"
-		}],
+		"commands": [
+			{
+				"command": "vscode-open-project.openProject",
+				"title": "Open Project"
+			}, {
+				"command": "vscode-open-project.changeProject",
+				"title": "Change Project"
+			}
+		],
 		"configuration": {
 			"title": "open project configuration",
 			"type": "object",
 			"properties": {
 				"vscode-open-project.projects": {
 					"type": "object",
-					"default": {
-						
-					},
+					"default": {},
 					"description": "Map of project identifier -> folder."
 				},
-				"vscode-open-project.codePath" : {
+				"vscode-open-project.codePath": {
 					"type": "string",
 					"default": "",
 					"description": "Path to the 'code' command"
@@ -40,10 +46,13 @@
 	},
 	"scripts": {
 		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test",
+		"lint": "node ./node_modules/tslint/bin/tslint ./src/*.ts ./src/debugAdapter/*.ts ./test/*.ts"
 	},
 	"devDependencies": {
-		"typescript": "^1.6.2",
-		"vscode": "0.10.x"
+		"typescript": "1.8.10",
+		"vscode": "^0.11.17"
 	}
 }
