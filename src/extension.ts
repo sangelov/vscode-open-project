@@ -9,6 +9,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	var openProjectCommand = vscode.commands.registerCommand(op.OpenProjectCommandId, op.openProject);
 	var changeProjectCommand = vscode.commands.registerCommand(op.ChangeProjectCommandId, op.changeProject);
+	var changeCurrentFolderCommand = vscode.commands.registerCommand(op.ChangeCurrentFolderCommandId, op.changeCurrentFolder);
 	var showCodeCommandNotFound = vscode.commands.registerCommand(status.CodeNotFoundCommandId, status.showCodeCommandNotFoundMessage);
-	context.subscriptions.push(openProjectCommand);
+	context.subscriptions.push(openProjectCommand, changeProjectCommand, changeCurrentFolderCommand, showCodeCommandNotFound);
 }

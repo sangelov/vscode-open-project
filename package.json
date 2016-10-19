@@ -2,7 +2,7 @@
 	"name": "vscode-open-project",
 	"displayName": "vscode-open-project",
 	"description": "Open a project using the VS Code command window",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "svetlozarangelov",
 	"repository": {
 		"url": "https://github.com/sangelov/vscode-open-project"
@@ -25,6 +25,9 @@
 			}, {
 				"command": "vscode-open-project.changeProject",
 				"title": "Change Project"
+			}, {
+				"command": "vscode-open-project.changeCurrentFolder",
+				"title": "Change Current Folder"
 			}
 		],
 		"configuration": {

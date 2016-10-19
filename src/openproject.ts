@@ -7,6 +7,7 @@ import cp = require("child_process");
 
 export const OpenProjectCommandId = "vscode-open-project.openProject";
 export const ChangeProjectCommandId = "vscode-open-project.changeProject";
+export const ChangeCurrentFolderCommandId = "vscode-open-project.changeCurrentFolder";
 
 export function openProject() {
 	selectProject(launchNewInstance);
@@ -14,6 +15,10 @@ export function openProject() {
 
 export function changeProject() {
 	selectProject(changeCurrentProject);
+}
+
+export function changeCurrentFolder() {
+	vscode.window.showInputBox({prompt: "Enter Path"}).then(changeCurrentProject);	
 }
 
 function selectProject(selectedProjectAction: (folder: string) => void) {
