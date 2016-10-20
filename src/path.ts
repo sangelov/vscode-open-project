@@ -30,6 +30,16 @@ export function getCodeCommandPath() {
 	return null;
 }
 
+export function directoryExist(folderPath: string): boolean {
+	try {
+		let stats = fs.lstatSync(folderPath);
+		return stats.isDirectory();
+	}
+	catch (e) {
+		return false;
+	}
+}
+
 export function isCodeCommandAvailable(): boolean {
 	var command = correctCommandName("code");
 	return getCodeCommandPath() !== null;

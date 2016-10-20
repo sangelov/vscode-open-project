@@ -18,7 +18,7 @@ export function changeProject() {
 }
 
 export function changeCurrentFolder() {
-	vscode.window.showInputBox({prompt: "Enter Path"}).then(changeCurrentProject);	
+	vscode.window.showInputBox({ prompt: "Enter Folder Path",validateInput: checkIfFolderExists}).then(changeCurrentProject);
 }
 
 function selectProject(selectedProjectAction: (folder: string) => void) {
@@ -35,8 +35,14 @@ function selectProject(selectedProjectAction: (folder: string) => void) {
 }
 
 function changeCurrentProject(selected: string) {
-	let uri = vscode.Uri.parse('file:///' + selected);
-	vscode.commands.executeCommand('vscode.openFolder', uri);
+	if (selected) {
+		let uri = vscode.Uri.parse('file:///' + selected);
+		vscode.commands.executeCommand('vscode.openFolder', uri);
+	}
+}
+
+function checkIfFolderExists(folderPath: string): string {
+	return path.directoryExist(folderPath) ? null : "Folder doesn't exist";
 }
 
 function launchNewInstance(projectFolder: string) {
