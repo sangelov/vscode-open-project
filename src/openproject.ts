@@ -3,6 +3,7 @@
 import * as vscode from "vscode";
 import * as path from "./path";
 import * as status from "./status"
+import { allProjects } from './projects';
 import cp = require("child_process");
 
 export const OpenProjectCommandId = "vscode-open-project.openProject";
@@ -18,15 +19,14 @@ export function changeProject() {
 }
 
 export function changeCurrentFolder() {
-	vscode.window.showInputBox({ prompt: "Enter Folder Path",validateInput: checkIfFolderExists}).then(changeCurrentProject);
+	vscode.window.showInputBox({ prompt: "Enter Folder Path", validateInput: checkIfFolderExists }).then(changeCurrentProject);
 }
 
 function selectProject(selectedProjectAction: (folder: string) => void) {
-	var projects = vscode.workspace.getConfiguration("vscode-open-project").get("projects");
+	var projects = allProjects();
 	var projectNames = Object.getOwnPropertyNames(projects);
 	vscode.window.showQuickPick(projectNames)
 		.then(selected => {
-			var projects = vscode.workspace.getConfiguration("vscode-open-project").get("projects");
 			var projectFolder = projects[selected];
 			if (projectFolder) {
 				selectedProjectAction(projectFolder);

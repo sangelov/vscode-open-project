@@ -2,7 +2,7 @@
 	"name": "vscode-open-project",
 	"displayName": "vscode-open-project",
 	"description": "Open a project using the VS Code command window",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"publisher": "svetlozarangelov",
 	"repository": {
 		"url": "https://github.com/sangelov/vscode-open-project"
@@ -38,6 +38,11 @@
 					"type": "object",
 					"default": {},
 					"description": "Map of project identifier -> folder."
+				},
+				"vscode-open-project.config": {
+					"type":"string",
+					"default": "",
+					"description": "Path to a json file containing the project map identifier -> folder"
 				},
 				"vscode-open-project.codePath": {
 					"type": "string",
