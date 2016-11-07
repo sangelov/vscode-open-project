@@ -2,7 +2,7 @@
 	"name": "vscode-open-project",
 	"displayName": "vscode-open-project",
 	"description": "Open a project using the VS Code command window",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"publisher": "svetlozarangelov",
 	"repository": {
 		"url": "https://github.com/sangelov/vscode-open-project"

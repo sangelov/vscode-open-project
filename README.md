@@ -19,9 +19,7 @@ You can create a map (name -> folder) in the configuration:
 or specify a config file in the configuration:
 ```json
 {
-    "vscode-open-project.projects": {
-        "open-project": "D:\\Work\\vscode-open-project.json"
-    }
+    "vscode-open-project.config": "D:\\Work\\projects.json"
 }
 ```
 
