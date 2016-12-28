@@ -2,7 +2,7 @@
 	"name": "vscode-open-project",
 	"displayName": "vscode-open-project",
 	"description": "Open a project using the VS Code command window",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"publisher": "svetlozarangelov",
 	"repository": {
 		"url": "https://github.com/sangelov/vscode-open-project"
@@ -22,12 +22,18 @@
 			{
 				"command": "vscode-open-project.openProject",
 				"title": "Open Project"
-			}, {
+			},
+			{
 				"command": "vscode-open-project.changeProject",
 				"title": "Change Project"
-			}, {
+			},
+			{
 				"command": "vscode-open-project.changeCurrentFolder",
 				"title": "Change Current Folder"
+			},
+			{
+				"command": "vscode-open-project.openCurrentFileInNewWindow",
+				"title": "Open Current File In New Window"
 			}
 		],
 		"configuration": {
@@ -40,7 +46,7 @@
 					"description": "Map of project identifier -> folder."
 				},
 				"vscode-open-project.config": {
-					"type":"string",
+					"type": "string",
 					"default": "",
 					"description": "Path to a json file containing the project map identifier -> folder"
 				},

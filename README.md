@@ -49,3 +49,6 @@ Change Project is the same as Open Project but it changes the current working fo
 
 ### **Change Current Folder Command**
 Change Current Folder shows input where you should enter the folder path you want to change. The command replaces the current working folder.
+
+### **Open Current File In New Window**
+Launches a new Visual Studio Code Instance with the current selected file.
