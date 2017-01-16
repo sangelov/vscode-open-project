@@ -68,7 +68,7 @@ function checkIfFolderExists(folderPath: string): string {
 function launchNewInstance(filepath: string) {
 	var codeCommand = path.getCodeCommandPath();
 	if (codeCommand) {
-		cp.execFile(codeCommand, [filepath]);
+		cp.execFile(codeCommand, ['-n', filepath]);
 	} else {
 		status.showCodeCommandNotFoundMessage();
 	}
