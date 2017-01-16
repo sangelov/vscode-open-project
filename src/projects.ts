@@ -23,6 +23,14 @@ export function allProjects() {
     return projectsClone;
 }
 
+export function getConfigPath(): string {
+    var config = <string>vscode.workspace.getConfiguration("vscode-open-project").get("config");
+    if (config && fs.existsSync(config)) {
+        return config;
+    }
+    return null;
+}
+
 function allConfigProjects(): Object {
     var config = <string>vscode.workspace.getConfiguration("vscode-open-project").get("config");
     if (config && fs.existsSync(config)) {
@@ -30,9 +38,9 @@ function allConfigProjects(): Object {
             var configProjects = JSON.parse(fs.readFileSync(config, 'utf8'));
         }
         catch (е) {
-            vscode.window.showErrorMessage("Error parsing vscode-open-project.config file. See you configuration and json file");
+            vscode.window.showErrorMessage("Error parsing vscode-open-project.config file. See your configuration path and the json file");
         }
-        if (configProjects.projects) {
+        if (configProjects && configProjects.projects) {
             return configProjects.projects;
         }
     }

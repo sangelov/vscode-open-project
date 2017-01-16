@@ -52,3 +52,6 @@ Change Current Folder shows input where you should enter the folder path you wan
 
 ### **Open Current File In New Window**
 Launches a new Visual Studio Code Instance with the current selected file.
+
+### **Open Project Configuration**
+Opens the vscode user configuration or the json config file if you have specified it.
